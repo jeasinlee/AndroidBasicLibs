@@ -13,7 +13,12 @@
             android:enabled="true"
             android:exported="true">
         </service>
-
+        <activity
+            android:name="cn.wwah.common.zxing.activity.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
     </application>
 
 </manifest>

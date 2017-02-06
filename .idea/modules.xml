@@ -3,9 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidBasicLibs.iml" filepath="$PROJECT_DIR$/AndroidBasicLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidBasicLibs.iml" filepath="$PROJECT_DIR$/AndroidBasicLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basekit/basekit.iml" filepath="$PROJECT_DIR$/basekit/basekit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basekit/basekit.iml" filepath="$PROJECT_DIR$/basekit/basekit.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uihelper/uihelper.iml" filepath="$PROJECT_DIR$/uihelper/uihelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/uihelper/uihelper.iml" filepath="$PROJECT_DIR$/uihelper/uihelper.iml" />
     </modules>
   </component>
