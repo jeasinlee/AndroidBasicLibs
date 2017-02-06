@@ -29,23 +29,17 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
     //    compile 'com.github.glomadrian:loadingballs:1.1@aar'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    // 自动注解
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    // 图片加载框架
+    compile 'com.jakewharton:butterknife:7.0.1' // 自动注解
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'com.trello:rxlifecycle:0.6.1'
     compile 'com.trello:rxlifecycle-components:0.6.1'
     compile 'com.trello:rxlifecycle-navi:0.6.1'
-    compile 'cn.yipianfengye.android:zxing-library:1.6'
-    //二维码
+    compile 'cn.yipianfengye.android:zxing-library:1.6' //二维码
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
-    compile 'com.classic.common:multiple-status-view:1.2'
-    //加载进度条
+    compile 'com.classic.common:multiple-status-view:1.2' //加载进度条
     compile 'com.hedgehog.ratingbar:app:1.0.4'
-    compile 'id.zelory:compressor:1.0.2'
-    //图片压缩工具
+    compile 'id.zelory:compressor:1.0.2' //图片压缩工具
     compile 'com.mcxiaoke.xbus:bus:1.0.+'
     compile 'com.zhy:autolayout:1.4.+'  //px自动化适配
     compile project(':uihelper')

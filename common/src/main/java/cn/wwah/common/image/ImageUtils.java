@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package cn.wwah.common;
+package cn.wwah.common.image;
 
 import android.content.Context;
 import android.content.Intent;
@@ -38,6 +38,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+
+import cn.wwah.common.FileUtils;
 
 /**
  * Create by jeasinlee 2016/5/21 021
