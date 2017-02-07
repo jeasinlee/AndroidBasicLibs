@@ -1,4 +1,4 @@
-package cn.wwah.common;
+package cn.wwah.common.cache;
 
 import android.annotation.TargetApi;
 import android.app.ActivityManager;

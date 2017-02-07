@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package cn.wwah.common;
+package cn.wwah.common.cipher;
 
 import android.util.Base64;
 
@@ -39,6 +39,8 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
+
+import cn.wwah.common.FileUtils;
 
 /**
  * Create by jeasinlee 2016/5/7 007

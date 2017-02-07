@@ -31,6 +31,19 @@ import java.util.Map;
  * Create by jeasinlee 2016/5/7 007
  */
 public class JsonUtils {
+    private static Gson gson;
+
+    public static Gson gson() {
+        if (gson == null) {
+            synchronized (Gson.class) {
+                if (gson == null) {
+                    gson = new Gson();
+                }
+            }
+        }
+        return gson;
+    }
+
     public static String toJson(Object obj) {
         Gson gson = new Gson();
         return gson.toJson(obj);
