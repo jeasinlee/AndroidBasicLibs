@@ -43,4 +43,5 @@ dependencies {
     compile 'com.trello:rxlifecycle:0.6.1'
     compile 'com.trello:rxlifecycle-components:0.6.1'
     compile 'com.trello:rxlifecycle-navi:0.6.1'
+    compile 'org.greenrobot:greendao:3.2.0'
 }
