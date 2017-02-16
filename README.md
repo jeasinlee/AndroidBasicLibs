@@ -5,14 +5,16 @@ A basic library about Android, including tools (network, pictures, check, IO, et
 Add it in your root build.gradle at the end of repositories:
 
   allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
+  	repositories {
+		...
+		maven { 
+			url 'https://jitpack.io' 
 		}
 	}
+}
   
   Add the dependency：
   
   dependencies {
-	        compile 'com.github.wwah:AndroidBasicLibs:0.2'
-	}
+  	compile 'com.github.wwah:AndroidBasicLibs:0.2'
+  }
