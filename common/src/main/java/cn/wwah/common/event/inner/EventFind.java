@@ -1,12 +1,12 @@
 package cn.wwah.common.event.inner;
 
-import com.vise.xsnow.event.EventSubscribe;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Set;
 
+import cn.wwah.common.event.EventSubscribe;
 import rx.subscriptions.CompositeSubscription;
 
 /**

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_search"
+                android:layout_width="0dp"
+                android:layout_height="70px"
+                android:layout_margin="5px"
+                android:layout_weight="1"
+                android:hint="搜我"
+                android:textColor="#888"
+                android:textColorHint="#7777"
+                android:textSize="18px" />
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5px"
+                android:gravity="center"
+                android:text="搜索"
+                android:textSize="18px" />
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_histroy"
+            android:layout_margin="2px"
+            android:layout_width="match_parent"
+            android:layout_height="300px" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_listGank"
+            android:layout_margin="2px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_lodin"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+</FrameLayout>

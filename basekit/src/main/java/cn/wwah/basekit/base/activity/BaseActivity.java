@@ -5,23 +5,16 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
 import android.view.WindowManager;
+
 import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.ActivityLifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.RxLifecycle;
 import com.zhy.autolayout.AutoLayoutActivity;
 
-import java.util.List;
-
-import cn.wwah.basekit.R;
-import cn.wwah.basekit.base.entity.PassException;
 import cn.wwah.basekit.base.iview.IBaseView;
 import cn.wwah.common.ActivityManagerUtil;
 import cn.wwah.common.DrawerToast;
@@ -37,11 +30,10 @@ public class BaseActivity extends AutoLayoutActivity implements ActivityLifecycl
     public ActivityManagerUtil activityManagerUtil;
     public Activity mActivity;
     public DrawerToast mToast;
-
+    private final BehaviorSubject<ActivityEvent> lifecycleSubject = BehaviorSubject.create();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
         mActivity = this;
         activityManagerUtil = ActivityManagerUtil.getInstance();
         activityManagerUtil.pushOneActivity(this);
@@ -53,9 +45,6 @@ public class BaseActivity extends AutoLayoutActivity implements ActivityLifecycl
         mToast = DrawerToast.getInstance(getApplicationContext());
     }
 
-    private final BehaviorSubject<ActivityEvent> lifecycleSubject = BehaviorSubject.create();
-    public String mThisFragmentTAG;
-    public String mEndFragmentTAG;
 
 
     @Override
@@ -79,32 +68,7 @@ public class BaseActivity extends AutoLayoutActivity implements ActivityLifecycl
         return RxLifecycle.bindActivity(lifecycleSubject);
     }
 
-    /**
-     * 恢复fragmnet正常次序           有问题这个方法不对 ，先保留
-     *
-     * @param savedInstanceState
-     */
-    public void fragmentRe(Bundle savedInstanceState) {
-        if (savedInstanceState != null) {
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            List<Fragment> fragmentList = fm.getFragments();
-            if (fragmentList != null && fragmentList.size() != 0) {
-                mEndFragmentTAG = savedInstanceState.getString("mEndFragmentTAG"); //最后一个的fragment
-                for (Fragment fragment : fragmentList) {
-                    if (fragment == null) {
-                        continue;
-                    }
-                    if (fragment.getClass().getName().equals(mEndFragmentTAG)) {
-                        ft = ft.show(fragment);
-                    } else {
-                        ft = ft.hide(fragment);
-                    }
-                }
-                ft.commit();
-            }
-        }
-    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -149,45 +113,6 @@ public class BaseActivity extends AutoLayoutActivity implements ActivityLifecycl
         super.onStop();
     }
 
-    /**
-     * 根据标记隐藏上一个frament 并修改标记成当前要显示的
-     *
-     * @param showFragment
-     */
-    private void hidePreviousFragment(Fragment showFragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        if (mThisFragmentTAG != null && mThisFragmentTAG != showFragment.getClass().getName()) {
-            Fragment fragmentByTag = fm.findFragmentByTag(mThisFragmentTAG);
-            ft.hide(fragmentByTag);
-            ft.commit();
-        }
-
-        mThisFragmentTAG = showFragment.getClass().getName();
-    }
-
-    /**
-     * 显示fragment
-     *
-     * @param mFragment
-     * @param isShow
-     */
-
-
-    public void showFragment(@IdRes int containerViewId, Fragment mFragment, boolean isShow) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        if (isShow) {
-            ft.show(mFragment);
-
-        } else {
-            ft.add(containerViewId, mFragment, mFragment.getClass().getName());
-        }
-        ft.commitAllowingStateLoss();
-        hidePreviousFragment(mFragment);
-    }
-
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -206,7 +131,7 @@ public class BaseActivity extends AutoLayoutActivity implements ActivityLifecycl
     }
 
     @Override
-    public void showException(PassException pe) {
+    public void showException(Throwable pe) {
 
     }
 }

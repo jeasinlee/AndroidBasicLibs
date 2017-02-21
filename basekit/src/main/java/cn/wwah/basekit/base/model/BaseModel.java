@@ -28,11 +28,12 @@ public class BaseModel {
         return provider;
     }
 
-    public void subscribe(Observable mObservable, Observer observer) {
+    public Observable subscribe(Observable mObservable, Observer observer) {
         mObservable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(getActivityLifecycleProvider().bindUntilEvent(ActivityEvent.DESTROY))
                 .subscribe(observer);
+        return mObservable;
     }
 
 }

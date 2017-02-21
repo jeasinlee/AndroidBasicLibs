@@ -44,4 +44,12 @@ dependencies {
     compile 'com.trello:rxlifecycle-components:0.6.1'
     compile 'com.trello:rxlifecycle-navi:0.6.1'
     compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1' // 自动注解
+    compile 'cn.yipianfengye.android:zxing-library:1.6' //二维码
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+    compile 'com.classic.common:multiple-status-view:1.2' //加载进度条
+    compile 'com.hedgehog.ratingbar:app:1.0.4'
+    compile 'id.zelory:compressor:1.0.2' //图片压缩工具
+    compile 'com.mcxiaoke.xbus:bus:1.0.+'
+    compile 'com.zhy:autolayout:1.4.+'  //px自动化适配
 }
