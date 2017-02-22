@@ -31,8 +31,25 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.google.code.gson:gson:2+'
     compile 'com.android.support:design:25.1.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0' // 图片加载框架
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    // 图片加载框架
     compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.vise.xiaoyaoyou:viselog:1.0.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.trello:rxlifecycle:0.6.1'
+    compile 'com.trello:rxlifecycle-components:0.6.1'
+    compile 'com.trello:rxlifecycle-navi:0.6.1'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1' // 自动注解
+    compile 'cn.yipianfengye.android:zxing-library:1.6' //二维码
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+    compile 'com.classic.common:multiple-status-view:1.2' //加载进度条
+    compile 'com.hedgehog.ratingbar:app:1.0.4'
+    compile 'id.zelory:compressor:1.0.2' //图片压缩工具
+    compile 'com.mcxiaoke.xbus:bus:1.0.+'
+    compile 'com.zhy:autolayout:1.4.+'  //px自动化适配
 }

@@ -9,10 +9,10 @@ import android.graphics.BitmapRegionDecoder;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class InputStreamBitmapDecoderFactory implements BitmapDecoderFactory {
+public class InputstreamBitmapDecoderFactory implements BitmapDecoderFactory {
     private InputStream inputStream;
 
-    public InputStreamBitmapDecoderFactory(InputStream inputStream) {
+    public InputstreamBitmapDecoderFactory(InputStream inputStream) {
         super();
         this.inputStream = inputStream;
     }

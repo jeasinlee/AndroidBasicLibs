@@ -10,8 +10,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.IBinder;
 
-import cn.wwah.common.AppUtils;
 import cn.wwah.common.JLog;
+import cn.wwah.common.system.AppUtil;
 
 public class DownloadService extends Service {
 
@@ -72,7 +72,8 @@ public class DownloadService extends Service {
                 case DownloadManager.STATUS_RUNNING:
                     break;*/
                 case DownloadManager.STATUS_SUCCESSFUL:
-                    AppUtils.installApk(this, filePath);
+
+                   AppUtil.installApk(this, filePath);
                     break;
             }
         }

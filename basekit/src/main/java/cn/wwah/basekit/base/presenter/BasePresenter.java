@@ -1,19 +1,15 @@
 package cn.wwah.basekit.base.presenter;
 
 import android.content.Context;
-import cn.wwah.basekit.base.entity.ExceptionCase;
-import cn.wwah.basekit.base.entity.PassException;
 
 import com.trello.rxlifecycle.ActivityLifecycleProvider;
 
 abstract public class BasePresenter {
 
     protected Context mContext;
-    protected ExceptionCase mExceptionCase;
 
     public BasePresenter(Context context) {
         mContext = context;
-        mExceptionCase = new ExceptionCase();
     }
 
 
@@ -30,9 +26,10 @@ abstract public class BasePresenter {
         return provider;
     }
 
-    public PassException doError(Throwable e) {
-        ExceptionCase exceptionCase = new ExceptionCase();
-        PassException passException = exceptionCase.ExceptionHandle(e);
-        return passException;
-    }
+    /**
+     * 业务异常处理
+     * @param e
+     * @return
+     */
+    abstract public Throwable doError(Throwable e);
 }
