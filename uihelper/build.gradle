@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -30,3 +30,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:25.1.0'
 }
+group='com.github.wwah'
