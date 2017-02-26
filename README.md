@@ -16,5 +16,5 @@ Add it in your root build.gradle at the end of repositories:
   Add the dependency：
   
   dependencies {
-  	compile 'com.github.wwah:AndroidBasicLibs:0.2'
+       compile 'com.github.wwah:AndroidBasicLibs:0.3'
   }
