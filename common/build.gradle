@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -53,4 +52,3 @@ dependencies {
     compile 'com.mcxiaoke.xbus:bus:1.0.+'
     compile 'com.zhy:autolayout:1.4.+'  //px自动化适配
 }
-group='com.github.wwah'
