@@ -19,8 +19,8 @@ Add it in your root build.gradle at the end of repositories:
   dependencies {
        compile 'com.github.wwah:AndroidBasicLibs:0.3.3'
   }
-  Add the AndroidManifes:
    ```
+     Add the AndroidManifes:
   ```
 
       <application
