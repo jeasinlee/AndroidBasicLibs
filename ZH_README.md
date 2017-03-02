@@ -41,4 +41,14 @@ AndroidBasicLibs是一套android应用层依赖开发框架。将业务层无关
 
 </manifest>
 
+
+```
+build.gradle:
+
+```
+build.gradle
+ defaultConfig {
+        minSdkVersion 19
+        ....
+        ｝
 ```
