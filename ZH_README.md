@@ -22,8 +22,8 @@ AndroidBasicLibs是一套android应用层依赖开发框架。将业务层无关
 
 ```
   dependencies {
-       compile 'com.github.wwah:AndroidBasicLibs:0.3.3'
-  }
+       compile 'com.github.wwah.AndroidBasicLibs:basekit:0.3.3'
+  }
 ```
 添加 AndroidManifes:
 ```
