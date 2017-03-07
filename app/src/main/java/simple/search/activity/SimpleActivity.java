@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -46,6 +47,11 @@ public class SimpleActivity extends BaseActivity implements GankSearchIView {
     @Bind(R.id.pb_lodin)
     ProgressBar pbLodin;
     private GankSearchPresenter gankSearchPresenter;
+    List<SearchM> mList = new ArrayList<SearchM>();
+    private HistoryAdaper historyAdaper;
+    private List<GankM> gankMs = new ArrayList<GankM>();
+    private QuickAdapter quickAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +90,7 @@ public class SimpleActivity extends BaseActivity implements GankSearchIView {
             public void afterTextChanged(Editable editable) {
                 if (edtSearch.getText().toString().length() > 0) {
                     gankSearchPresenter.selectHistoryKey(edtSearch.getText().toString().trim());
-                }else{
+                } else {
                     gankSearchPresenter.selectHistoryKey(10);
                 }
             }
@@ -100,6 +106,13 @@ public class SimpleActivity extends BaseActivity implements GankSearchIView {
         rvHistroy.setVisibility(View.GONE);
         gankSearchPresenter = new GankSearchPresenter(SimpleActivity.this, SimpleActivity.this);
         gankSearchPresenter.selectHistoryKey(10);
+        historyAdaper = new HistoryAdaper(this.mList, gankSearchPresenter);
+        historyAdaper.openLoadAnimation(BaseQuickAdapter.LOADING_VIEW);
+        rvHistroy.setAdapter(historyAdaper);
+        quickAdapter = new QuickAdapter(gankMs);
+        quickAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+        rvListGank.addItemDecoration(new RecycleViewDivider(SimpleActivity.this, LinearLayoutManager.HORIZONTAL));
+        rvListGank.setAdapter(quickAdapter);
     }
 
 
@@ -117,11 +130,9 @@ public class SimpleActivity extends BaseActivity implements GankSearchIView {
     public void showList(List<GankM> gankMs) {
         pbLodin.setVisibility(View.GONE);
         rvHistroy.setVisibility(View.GONE);
-        QuickAdapter adapter = new QuickAdapter(gankMs);
-        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
-        rvListGank.addItemDecoration(new RecycleViewDivider(SimpleActivity.this, LinearLayoutManager.HORIZONTAL));
-        rvListGank.setAdapter(adapter);
-
+        this.gankMs.clear();
+        this.gankMs.addAll(gankMs);
+        quickAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -129,9 +140,9 @@ public class SimpleActivity extends BaseActivity implements GankSearchIView {
         if (rvHistroy.getVisibility() == View.GONE) {
             rvHistroy.setVisibility(View.VISIBLE);
         }
-        HistoryAdaper adapter = new HistoryAdaper(mList, gankSearchPresenter);
-        adapter.openLoadAnimation(BaseQuickAdapter.LOADING_VIEW);
-        rvHistroy.setAdapter(adapter);
+        this.mList.clear();
+        this.mList.addAll(mList);
+        historyAdaper.notifyDataSetChanged();
 
     }
 
