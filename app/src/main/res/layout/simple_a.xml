@@ -44,7 +44,7 @@
             android:id="@+id/rv_histroy"
             android:layout_margin="2px"
             android:layout_width="match_parent"
-            android:layout_height="300px" />
+            android:layout_height="40px" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_listGank"
